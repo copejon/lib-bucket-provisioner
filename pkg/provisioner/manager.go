@@ -18,12 +18,12 @@ package provisioner
 
 import (
 	"flag"
-	"time"
 	"k8s.io/apimachinery/pkg/util/validation"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 	"k8s.io/klog"
 	"k8s.io/klog/klogr"
+	"time"
 
 	"github.com/kube-object-storage/lib-bucket-provisioner/pkg/client/clientset/versioned"
 	informers "github.com/kube-object-storage/lib-bucket-provisioner/pkg/client/informers/externalversions"
@@ -115,6 +115,7 @@ func (p *Provisioner) SetLabels(labels map[string]string) []string {
 // Run starts the claim and bucket controllers.
 func (p *Provisioner) Run(stopCh <-chan struct{}) (err error) {
 	defer klog.Flush()
+	log.Info("THIS IS A DEBUG LOG LINE!!!")
 	log.Info("starting provisioner", "name", p.Name)
 
 	p.informerFactory.Start(stopCh)
