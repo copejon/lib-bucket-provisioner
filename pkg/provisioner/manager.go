@@ -115,7 +115,7 @@ func (p *Provisioner) SetLabels(labels map[string]string) []string {
 // Run starts the claim and bucket controllers.
 func (p *Provisioner) Run(stopCh <-chan struct{}) (err error) {
 	defer klog.Flush()
-	log.Info("THIS IS A DEBUG LOG LINE!!!")
+	log.Info("THIS IS A DEBUG LOG LINE!!!   AGAIN!")
 	log.Info("starting provisioner", "name", p.Name)
 
 	p.informerFactory.Start(stopCh)
