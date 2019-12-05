@@ -30,6 +30,8 @@ import (
 	"github.com/kube-object-storage/lib-bucket-provisioner/pkg/provisioner/api"
 )
 
+var _ = "DEBUG"
+
 // Provisioner wraps a custom controller which watches OBCs and manages OB, CMs, and Secrets.
 type Provisioner struct {
 	Name            string
